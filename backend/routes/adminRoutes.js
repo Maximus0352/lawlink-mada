@@ -8,5 +8,6 @@ router.get('/stats', ...admin, controller.getStats);
 router.get('/avocats/a-verifier', ...admin, controller.getAvocatsAVerifier);
 router.patch('/avocats/:id/valider', ...admin, controller.validerAvocat);
 router.patch('/avocats/:id/rejeter', ...admin, controller.rejeterAvocat);
+router.get('/clients', ...admin, controller.getClients);
 
 module.exports = router;
