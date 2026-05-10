@@ -36,4 +36,13 @@ const rejeterAvocat = async (req, res) => {
   }
 };
 
-module.exports = { getStats, getAvocatsAVerifier, validerAvocat, rejeterAvocat };
+const getClients = async (req, res) => {
+  try {
+    const data = await adminService.getClients();
+    res.json({ success: true, data });
+  } catch (err) {
+    res.status(err.status || 500).json({ success: false, message: err.message });
+  }
+};
+
+module.exports = { getStats, getAvocatsAVerifier, validerAvocat, rejeterAvocat, getClients };
