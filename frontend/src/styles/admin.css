@@ -1,0 +1,77 @@
+/* ── ADMIN PAGES ── */
+
+/* Raccourcis dashboard */
+.admin-raccourcis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+.admin-raccourci {
+  background: var(--blanc);
+  border: 1.5px solid var(--gris-bord);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.admin-raccourci:hover {
+  border-color: var(--bleu);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+.admin-raccourci-icone {
+  width: 48px; height: 48px;
+  border-radius: var(--radius);
+  background: var(--bleu-clair);
+  color: var(--bleu);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+.admin-raccourci-titre { font-weight: 700; font-size: 0.95rem; margin-bottom: 3px; color: var(--noir); }
+.admin-raccourci-desc  { font-size: 0.78rem; color: var(--gris); }
+
+/* Recherche admin */
+.recherche-admin {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--gris-bord);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+  background: var(--blanc);
+  font-family: var(--font);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.recherche-admin:focus {
+  outline: none;
+  border-color: var(--bleu);
+  box-shadow: 0 0 0 3px rgba(26,111,191,0.1);
+}
+
+/* Tableau admin */
+.avocat-nom-admin   { font-weight: 700; font-size: 0.9rem; color: var(--noir); }
+.avocat-email-admin { font-size: 0.75rem; color: var(--gris); margin-top: 2px; }
+
+.actions-ligne { display: flex; gap: 7px; flex-wrap: wrap; }
+
+/* Carte avocat liste admin */
+.avocat-info-admin {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.admin-av-avatar {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: var(--bleu-clair);
+  color: var(--bleu-fonce);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}

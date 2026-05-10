@@ -1,0 +1,472 @@
+/* ── CLIENT PAGES ── */
+.page-titre { font-size: 1.7rem; font-weight: 800; margin-bottom: 4px; color: var(--noir); letter-spacing: -0.03em; }
+.page-sous  { color: var(--gris); font-size: 0.9rem; margin-bottom: 28px; }
+
+/* Raccourcis accueil */
+.raccourcis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.raccourci-carte {
+  background: var(--blanc);
+  border: 1.5px solid var(--gris-bord);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-decoration: none;
+  color: var(--noir);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.raccourci-carte::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--bleu), var(--bleu-medio));
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+.raccourci-carte:hover {
+  border-color: var(--bleu);
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+.raccourci-carte:hover::before { transform: scaleX(1); }
+.raccourci-icone {
+  font-size: 1.6rem;
+  color: var(--bleu);
+  margin-bottom: 4px;
+}
+.raccourci-titre { font-weight: 700; font-size: 0.95rem; color: var(--noir); }
+.raccourci-desc  { font-size: 0.78rem; color: var(--gris); line-height: 1.4; }
+
+/* Section avantages */
+.avantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.avantages-grid > div {
+  background: var(--blanc);
+  padding: 18px 14px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  border: 1.5px solid var(--gris-bord);
+  transition: all 0.18s;
+}
+.avantages-grid > div:hover {
+  border-color: var(--bleu);
+  background: var(--bleu-clair);
+  transform: translateY(-2px);
+}
+.avantages-grid i { font-size: 1.4rem; color: var(--bleu); display: block; margin-bottom: 8px; }
+.avantages-grid p { font-size: 0.8rem; font-weight: 600; color: var(--texte); }
+
+/* Recherche */
+.recherche-barre {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  background: var(--blanc);
+  border: 1.5px solid var(--gris-bord);
+  border-radius: var(--radius-lg);
+  padding: 10px 12px;
+  box-shadow: var(--shadow-sm);
+  align-items: center;
+}
+.recherche-input {
+  flex: 2;
+  min-width: 200px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  background: var(--gris-pale);
+  font-family: var(--font);
+  color: var(--texte);
+}
+.recherche-input:focus { outline: none; background: var(--bleu-clair); }
+.recherche-select {
+  flex: 1;
+  min-width: 140px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  background: var(--gris-pale);
+  font-family: var(--font);
+  color: var(--texte);
+}
+.recherche-select:focus { outline: none; background: var(--bleu-clair); }
+
+.filtre-verifie {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: var(--texte);
+  font-weight: 500;
+}
+.resultats-count {
+  font-size: 0.82rem;
+  color: var(--gris);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+/* Cartes avocats */
+.avocats-liste { display: flex; flex-direction: column; gap: 14px; }
+.avocat-carte {
+  background: var(--blanc);
+  border: 1.5px solid var(--gris-bord);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: 54px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+.avocat-carte:hover {
+  border-color: var(--bleu);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+.avocat-avatar {
+  width: 54px; height: 54px;
+  border-radius: 14px;
+  background: var(--bleu-clair);
+  color: var(--bleu-fonce);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 1rem;
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+}
+.avocat-avatar.grand { width: 68px; height: 68px; font-size: 1.3rem; border-radius: 18px; }
+.avocat-nom-ligne { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 5px; }
+.avocat-nom { font-size: 1rem; font-weight: 700; color: var(--noir); }
+.avocat-meta {
+  display: flex; gap: 14px; font-size: 0.78rem; color: var(--gris);
+  flex-wrap: wrap; align-items: center;
+}
+.avocat-meta span { display: flex; align-items: center; gap: 4px; }
+.avocat-desc { font-size: 0.8rem; color: #6B7280; margin-top: 6px; line-height: 1.5; }
+.avocat-actions { display: flex; flex-direction: column; gap: 7px; min-width: 130px; }
+
+/* Modal profil */
+.profil-entete { display: flex; gap: 18px; align-items: flex-start; margin-bottom: 22px; }
+.portfolio-item {
+  background: var(--gris-pale);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border: 1px solid var(--gris-bord);
+}
+.dispos-liste { display: flex; flex-direction: column; gap: 7px; }
+.dispo-item {
+  background: var(--vert-clair);
+  color: var(--vert);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex; align-items: center; gap: 7px;
+}
+
+/* Demandes client */
+.demandes-liste { display: flex; flex-direction: column; gap: 14px; }
+.demande-carte {
+  background: var(--blanc);
+  border: 1.5px solid var(--gris-bord);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  transition: box-shadow 0.18s;
+}
+.demande-carte:hover { box-shadow: var(--shadow-sm); }
+.demande-entete { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.demande-avocat { font-weight: 700; font-size: 0.95rem; color: var(--noir); }
+.demande-specialite { font-size: 0.78rem; color: var(--gris); margin-top: 2px; }
+.demande-objet { font-size: 0.9rem; font-weight: 600; margin-bottom: 5px; }
+.demande-message { font-size: 0.84rem; color: #6B7280; margin-bottom: 12px; line-height: 1.5; }
+.demande-footer { display: flex; justify-content: space-between; align-items: center; }
+.demande-date { font-size: 0.78rem; color: var(--gris); }
+.demande-rdv-btn { margin-top: 10px; }
+
+/* Notifications */
+.notifs-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+
+
+/* ================================================================
+   PAGE ACCUEIL CLIENT — Design chaleureux
+   ================================================================ */
+
+.accueil-page {
+  min-height: 100vh;
+  background: var(--gris-clair);
+  padding-top: var(--nav-h);
+}
+
+/* ── Hero bienvenue ── */
+.accueil-hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--bleu-fonce) 0%, var(--bleu) 60%, #3B90D4 100%);
+  padding: 52px 0 64px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  border-radius: 0px 0px 40px 40px;
+}
+
+.accueil-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.07) 0%, transparent 50%),
+    radial-gradient(circle at 10% 80%, rgba(255,255,255,0.05) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.accueil-hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.accueil-salut {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.accueil-nom {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+
+.accueil-intro {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 480px;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.accueil-cta {
+  background: #ffffff;
+  color: var(--bleu-fonce);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.accueil-cta:hover { background: #f0f7ff; transform: translateY(-2px); }
+
+/* Banner notification */
+.accueil-notif-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-lg);
+  padding: 12px 18px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s;
+  max-width: 420px;
+}
+.accueil-notif-banner:hover { background: rgba(255,255,255,0.2); }
+.accueil-notif-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #FCD34D;
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ── Corps de la page ── */
+.accueil-body {
+  padding-top: 36px;
+  padding-bottom: 60px;
+}
+
+.accueil-section {
+  margin-bottom: 40px;
+}
+
+.accueil-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.accueil-section-titre {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--noir);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.accueil-section-head .accueil-section-titre { margin-bottom: 0; }
+
+.accueil-voir-tout {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--bleu);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.accueil-voir-tout:hover { text-decoration: underline; }
+
+/* ── Actions rapides ── */
+.accueil-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accueil-action {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--blanc);
+  border: 1.5px solid var(--gris-bord);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--texte);
+  transition: all 0.18s ease;
+}
+.accueil-action:hover {
+  border-color: var(--bleu);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
+  text-decoration: none;
+}
+.accueil-action--primary {
+  border-color: var(--bleu);
+  background: var(--bleu-clair);
+}
+.accueil-action--primary:hover { background: #d6eafb; }
+
+.accueil-action-icon {
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  background: var(--bleu);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.accueil-action-icon--orange { background: var(--orange); }
+.accueil-action-icon--vert   { background: var(--vert); }
+
+.accueil-action-body { flex: 1; }
+.accueil-action-titre { font-weight: 700; font-size: 0.92rem; color: var(--noir); margin-bottom: 2px; }
+.accueil-action-desc  { font-size: 0.78rem; color: var(--gris); }
+.accueil-action-arrow { color: var(--gris-bord2); font-size: 0.8rem; }
+
+/* ── Demandes récentes ── */
+.accueil-demandes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accueil-demande-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--blanc);
+  border: 1.5px solid var(--gris-bord);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  transition: box-shadow 0.18s;
+}
+.accueil-demande-item:hover { box-shadow: var(--shadow-sm); }
+
+.accueil-demande-avatar {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--bleu-clair);
+  color: var(--bleu-fonce);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+}
+
+.accueil-demande-info { flex: 1; min-width: 0; }
+.accueil-demande-nom  { font-weight: 700; font-size: 0.9rem; color: var(--noir); margin-bottom: 2px; }
+.accueil-demande-objet { font-size: 0.82rem; color: var(--texte); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.accueil-demande-date  { font-size: 0.73rem; color: var(--gris); margin-top: 2px; }
+
+.accueil-demande-statut {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  letter-spacing: 0.01em;
+}
+
+/* ── État vide ── */
+.accueil-vide {
+  background: var(--blanc);
+  border: 1.5px dashed var(--gris-bord2);
+  border-radius: var(--radius-xl);
+  padding: 48px 24px;
+  text-align: center;
+}
+.accueil-vide-illustration {
+  font-size: 2.8rem;
+  color: var(--gris-bord2);
+  margin-bottom: 14px;
+}
+.accueil-vide-titre { font-weight: 700; font-size: 1rem; color: var(--noir); margin-bottom: 6px; }
+.accueil-vide-desc  { font-size: 0.875rem; color: var(--gris); max-width: 320px; margin: 0 auto; line-height: 1.6; }
+
+/* ── Conseils ── */
+.accueil-conseils {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.accueil-conseil {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--blanc);
+  border: 1.5px solid var(--gris-bord);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+}
+.accueil-conseil-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
+.accueil-conseil p    { font-size: 0.875rem; color: var(--texte); line-height: 1.6; margin: 0; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .accueil-nom { font-size: 1.7rem; }
+  .accueil-hero { padding: 40px 0 50px; }
+}

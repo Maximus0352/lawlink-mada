@@ -1,0 +1,104 @@
+/* ── AUTH PAGES ── */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: linear-gradient(150deg, #f0f7ff 0%, #f8f9fc 60%, #f0faf6 100%);
+}
+
+.auth-carte {
+  width: 100%;
+  max-width: 460px;
+  background: var(--blanc);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(226,230,237,0.6);
+}
+
+.auth-logo {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--noir);
+  letter-spacing: -0.03em;
+}
+.auth-logo span { color: var(--bleu); }
+
+.auth-titre {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  text-align: center;
+  color: var(--noir);
+  letter-spacing: -0.04em;
+}
+.auth-sous {
+  color: var(--gris);
+  font-size: 0.875rem;
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+.auth-lien {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.875rem;
+  color: var(--gris);
+}
+.auth-lien a { color: var(--bleu); font-weight: 600; }
+
+/* Choix de rôle */
+.role-choix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.role-btn {
+  padding: 12px;
+  border: 2px solid var(--gris-bord);
+  border-radius: var(--radius);
+  background: var(--blanc);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--font);
+  transition: all 0.15s;
+  color: var(--gris);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.role-btn:hover { border-color: var(--bleu); color: var(--bleu); background: var(--bleu-clair); }
+.role-btn.actif { border-color: var(--bleu); background: var(--bleu-clair); color: var(--bleu-fonce); }
+
+/* Bloc champs avocat */
+.avocat-champs {
+  background: var(--bleu-clair);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(26,111,191,0.12);
+}
+.avocat-champs .champ input,
+.avocat-champs .champ select,
+.avocat-champs .champ textarea {
+  background: var(--blanc);
+}
+
+/* Bouton submit */
+.auth-submit {
+  background: var(--bleu);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(26,111,191,0.3);
+  margin-top: 4px;
+}
+.auth-submit:hover:not(:disabled) {
+  background: var(--bleu-fonce);
+  box-shadow: 0 5px 16px rgba(26,111,191,0.38);
+  transform: translateY(-1px);
+}

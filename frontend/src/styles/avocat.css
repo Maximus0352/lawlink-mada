@@ -1,0 +1,141 @@
+/* ── AVOCAT PAGES ── */
+
+/* Prochain RDV dashboard */
+.prochain-rdv {
+  margin-top: 8px;
+  border-left: 4px solid var(--bleu);
+  background: var(--bleu-clair);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+}
+.rdv-info { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; }
+.rdv-date   { color: var(--bleu); font-weight: 700; }
+.rdv-client { font-weight: 600; }
+.rdv-objet  { color: #555; }
+.rdv-lieu   { color: var(--gris); font-size: 0.84rem; }
+
+/* Demandes avocat */
+.demandes-liste { display: flex; flex-direction: column; gap: 14px; }
+.demande-carte {
+  background: var(--blanc);
+  border: 1.5px solid var(--gris-bord);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  transition: box-shadow 0.18s;
+}
+.demande-carte:hover { box-shadow: var(--shadow-sm); }
+.demande-entete  { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.demande-client  { font-weight: 700; font-size: 0.95rem; color: var(--noir); }
+.demande-date-small { font-size: 0.78rem; color: var(--gris); margin-top: 2px; }
+.demande-objet   { font-weight: 600; margin-bottom: 5px; font-size: 0.9rem; }
+.demande-message { font-size: 0.84rem; color: #6B7280; margin-bottom: 14px; line-height: 1.5; }
+.demande-actions { display: flex; gap: 10px; }
+
+/* Profil affichage */
+.profil-affichage {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+.profil-avatar {
+  width: 68px; height: 68px;
+  border-radius: 18px;
+  background: var(--bleu-clair);
+  color: var(--bleu-fonce);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; font-weight: 800;
+  flex-shrink: 0;
+}
+.profil-nom     { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; color: var(--noir); }
+.profil-details { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.82rem; color: var(--gris); margin-top: 6px; }
+.profil-details span { display: flex; align-items: center; gap: 4px; }
+.profil-desc    { font-size: 0.875rem; color: var(--texte); margin-top: 12px; line-height: 1.65; }
+
+/* Statut profil */
+.profil-statut {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.profil-statut.pending { background: var(--orange-clair); color: var(--orange); border: 1px solid rgba(217,119,6,0.2); }
+.profil-statut.verified { background: var(--vert-clair); color: var(--vert); border: 1px solid rgba(14,122,95,0.2); }
+
+/* Formulaire ajout */
+.form-ajout {
+  background: var(--gris-pale);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  margin-bottom: 18px;
+  border: 1px solid var(--gris-bord);
+}
+
+/* Portfolio avocat */
+.portfolio-item-av {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  background: var(--gris-pale);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border: 1px solid var(--gris-bord);
+  gap: 12px;
+}
+.portfolio-item-av .info { flex: 1; }
+.portfolio-item-av strong { font-size: 0.9rem; color: var(--noir); }
+.portfolio-item-av p { font-size: 0.8rem; color: var(--gris); margin-top: 3px; }
+
+/* Disponibilités */
+.dispos-grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+.dispo-item-av {
+  background: var(--vert-clair);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  display: flex; justify-content: space-between; align-items: center;
+  border: 1px solid rgba(14,122,95,0.15);
+}
+.dispo-date  { font-weight: 700; font-size: 0.85rem; color: var(--vert); }
+.dispo-heure { font-size: 0.78rem; color: var(--vert); margin-top: 2px; }
+
+/* Agenda */
+.agenda-tabs { display: flex; gap: 0; margin-bottom: 20px; background: var(--gris-pale); border-radius: var(--radius); padding: 4px; }
+.agenda-tab {
+  flex: 1; padding: 8px 16px;
+  border: none; background: none;
+  font-family: var(--font); font-size: 0.85rem; font-weight: 600;
+  color: var(--gris); border-radius: 7px;
+  cursor: pointer; transition: all 0.15s;
+}
+.agenda-tab.actif { background: var(--blanc); color: var(--bleu); box-shadow: var(--shadow-sm); }
+
+.rdvs-liste { display: flex; flex-direction: column; gap: 12px; }
+.rdv-carte {
+  background: var(--blanc);
+  border: 1.5px solid var(--gris-bord);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  transition: all 0.18s;
+}
+.rdv-carte:hover { border-color: var(--bleu-clair); box-shadow: var(--shadow-sm); }
+.rdv-carte.passe { opacity: 0.6; }
+.rdv-date-bloc {
+  text-align: center;
+  background: var(--bleu-clair);
+  border-radius: var(--radius);
+  padding: 10px 8px;
+}
+.rdv-jour  { font-size: 0.82rem; font-weight: 700; color: var(--bleu); line-height: 1; margin-bottom: 2px; }
+.rdv-heure { font-size: 0.72rem; color: var(--bleu); }
+.rdv-details { display: flex; flex-direction: column; gap: 3px; }
+.rdv-client-nom { font-weight: 700; font-size: 0.95rem; color: var(--noir); }
+.rdv-objet  { font-size: 0.84rem; color: var(--texte); }
+.rdv-lieu   { font-size: 0.78rem; color: var(--gris); }
+.rdv-duree  { font-size: 0.78rem; color: var(--gris); }
